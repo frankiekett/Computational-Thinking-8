@@ -1,3 +1,4 @@
+# setup
 import turtle
 
 t = turtle.Turtle()
