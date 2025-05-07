@@ -19,21 +19,21 @@ def create_sprite(image_filename, x=0, y=0):
 
 # Section 2 - Variables
 # TODO - add starting values for all the variables
-x1 = -100
-y1 = 100
-x2 = -100
-y2 = 50
+x1 = 200
+y1 = -200
+x2 = 150
+y2 = -100
 x3 = -100
-y3 = 0
-x4 = -100
-y4 = -50
+y3 = 200
+x4 = 50
+y4 = 100
 # Section 3 - Setup
 # TODO - use your own background, and set your four turtles to images of your choice
 set_background("summer")
-t1 = create_sprite("fox",x1,y1)
-t2 = create_sprite("dog",x2,y2)
-t3 = create_sprite("fish",x3,y3)
-t4 = create_sprite("cat",x4,y4)
+t1 = create_sprite("basketball",x1,y1)
+t2 = create_sprite("kitten",x2,y2)
+t3 = create_sprite("bat",x3,y3)
+t4 = create_sprite("flower",x4,y4)
 
 
 # # Section 4 - Racing
@@ -55,13 +55,13 @@ for i in range(30):
 # # TODO - complete the elif for player 2 winning
 # # TODO - write another elif for player 3 and player 4
 if x1 >= x2 and x1 >= x3 and x1 >= x4:
- 	print("fox wins!")
+ 	print("basketball wins!")
 elif x2 >= x1 and x2 >= x3 and x2 >= x4:
- 	print("dog wins!")
+ 	print("kitten wins!")
 elif x3 >= x1 and x3 >= x2 and x3 >= x4:
-	print("fish wins!")
+	print("bat wins!")
 elif x4 >= x1 and x4 <= x2 and x4 >= x4:
-	print("cat wins!")
+	print("flower wins!")
 
 
 
