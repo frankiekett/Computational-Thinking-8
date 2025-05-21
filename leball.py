@@ -25,14 +25,14 @@ window = turtle.Screen()
 window.tracer(0)
 
 # Section 2: Setup
-s1 = create_sprite("lebron",0,0)
-set_background("lakers2")
-# TODO - set the starting value for your variable
 
-# Section 3: Controls
+s1 = create_sprite("lebron",0,-225)
+set_background("lakers2")
+
+# TODO - set the starting value for your variable
 def move_up():
 	s1.setheading(90)
-	s1.forward(10)
+	s1.forward(20)
    	 
 def move_down():
 	s1.setheading(270)
@@ -48,12 +48,10 @@ def move_right():
 	
 
 	
-
-	
-
-	
 def reset(x,y):
 	s1.goto(x,y)
+
+# Section 3: Controls
 
 
 window.onkeypress(move_up, "Up")
@@ -67,22 +65,40 @@ window.onscreenclick(reset)
 # Section 4: Game Loop
 window.listen()
 timer = 0
+lives = 1
+obstacles = []
 while True:
 	time.sleep(0.1)
 	timer += 1  
-	 
+
     
- 	# TODO - code for automatic actions
+ 	# TODO - code for automatic action 
+	if timer % 15 == 0:
+		y_position = random.randint(-200, 200)
+		s2 = create_sprite("basketball",300,y_position)
+		s2.setheading(180)
+		obstacles.append(s2)
+
+	for s2 in obstacles:
+		s2.forward(10)
+		if get_distance(s1, s2) < 50:
+			lives -= 1
+			s2.hideturtle()
+			obstacles.remove(s2)
 
 
 
-
+	if s1.ycor()>250:
+		print("Winner!")
+		break
 
 
 	window.update()
+	if lives == 0:
+		break
 
-	# if :
-	# 	break
+
+	
 	
 
 print("Game Over")

@@ -2,6 +2,7 @@
 import turtle
 
 t = turtle.Turtle()
+
 # where to go and other colors for it 
 t.goto(-100,0)
 t.color("pink")
